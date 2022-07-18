@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+:root{
+  --bgcolor:#555;
+  --navcolor:#303;
+  --hamburgercolor:#000;
+  --fontsizelogo:35px;
+  --fontsizeh1:50px;
+  --fontsizeh2:35px;
+  --fontcolor:#bbb;
+  --bghover:#555;
+  --menuwsize:45vw;
+  --menuhsize:100vh;
+  --menucolor:rgba(135,206,235,.7);
+  --newfont: 'PT Serif', serif;
+  --titlecolor:#b98e1f;
+}
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: var(--newfont);
+}
+h1,h2,h3,h4{
+  background: linear-gradient(rgb(255,185,0),rgb(255,87,50));
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+html{scroll-behavior: smooth;}
+a{text-decoration: none;}
+li{list-style: none;}
+h1{font-size:4em;}
+h2{font-size: 3em;}
+h3{font-size: 2em}
+p{font-size: 1.25em;}
+input{display:none;}
+header{
+  position:fixed;
+  top:0;  
+  z-index: 1000;
+}
+body{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.background{
+  background-color: #fff;
+  opacity: .65;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.background video{
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#menu-toggle:checked + .menu-buttom>span{
+  transform: rotate(45deg);
+  top: 2px;
+}
+
+#menu-toggle:checked + .menu-buttom>span::before{
+  top:0;
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+#menu-toggle:checked + .menu-buttom>span::after{
+  top:0;
+  transform: rotate(-90deg);
+}
+#menu-toggle:checked ~ #menu-box{
+  top: 0 !important;
+}
+.menu-buttom{
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 1200;
+}
+.menu-buttom>span,
+.menu-buttom>span::before,
+.menu-buttom>span::after{
+  display: block;
+  position: relative;
+  z-index: 1100;
+  width: 40px;
+  height: 4px;
+  background: var(--hamburgercolor);
+  transition-duration: .5s;
+}
+.menu-buttom>span::before{
+  content: "";
+  top: 12px;
+}
+.menu-buttom>span::after{
+  content: "";
+  top: 20px;
+}
+#menu-box{
+  display: flex;
+  top: -200%;
+  width: 100%;
+  height: 70%;
+  position: fixed;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--menucolor);
+  transition-duration: .2;
+  z-index: 1000;
+}
+#menu-item{
+  display: block;
+  color: #fff;
+  transition-duration: .25s;
+}
+#menu-item:hover{
+  background: rgba(0,0,0,.4);
+}
+
+
+.showme{
+  z-index: 500;
+}
+#accent{color:#f00;}
+.section{max-width: 1000px;}
+.container{margin:40px 10%;}
+.cristal{
+  background: linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius:20px;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,.37)
+}
+#index .container{
+  height: 80vh;
+}
+#map{
+  height: 500px;
+	width: 100%;
+}
+@media (min-width: 650px){
+  body{
+    flex-direction: row;
+  }
+  /*.background{width:100%;}*/
+  header{width:20vw;}
+
+}
