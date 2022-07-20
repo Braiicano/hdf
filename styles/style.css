@@ -136,6 +136,7 @@ body{
 
 
 .showme{
+  position: relative;
   z-index: 500;
 }
 #accent{color:#f00;}
@@ -250,13 +251,16 @@ button:hover{
 @media (min-width: 650px){
   body{
     flex-direction: row;
-  }
+    margin-bottom: 10vh;
+   }
   header{width:20vw;}
+  .showme{
+    top: 5vw;
+  }
   #index .container{
     height: 80vh;
   } 
   #ministry .container{
-    height:60vh;
   }
   .article{
     flex-direction: row;
@@ -288,14 +292,9 @@ button:hover{
   .menu-button{display:none;}
   #menu-box{
     top:0;
-    width: 5vw;
-    height: 100%;
-    font-size: .5em;
-    transition-duration: .05s;
-  }
-  #menu-box:hover{
-    font-size: 1em;
-    width: 10vw;
+    width: 100vw;
+    height: 10%;
+    flex-direction: row;
   }
   #menu-item{
     padding: 20px 12px;
